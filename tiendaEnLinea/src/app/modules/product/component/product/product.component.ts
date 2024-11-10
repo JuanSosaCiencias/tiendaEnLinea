@@ -55,7 +55,7 @@ export class ProductComponent {
             this.getProducts();
           },
           error: (e) => {
-            console.log(e);
+            console.error(e);
             this.swal.errorMessage(e.error.message);
           }
         });
@@ -73,7 +73,7 @@ export class ProductComponent {
             this.getProducts();
           },
           error: (e) => {
-            console.log(e);
+            console.error(e);
             this.swal.errorMessage(e.error.message);
           }
         });
@@ -90,7 +90,7 @@ export class ProductComponent {
       },
       error: (e) => {
         this.loading = false;
-        console.log(e);
+        console.error(e);
         this.swal.errorMessage(e.error!.message); // show message
       }
     });
@@ -129,7 +129,7 @@ export class ProductComponent {
         this.categories = v;
       },
       error: (e) => {
-        console.log(e);
+        console.error(e);
         this.swal.errorMessage(e.error!.message); // show message
       }
     });

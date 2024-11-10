@@ -1,0 +1,71 @@
+.custom-header {
+    background-image: url('/assets/fondo.jpg');
+    background-size: cover; /* La imagen se adapta a todo el fondo, cubriendo el área del contenedor */
+    background-position: center; /* Alineación centrada de la imagen */
+    background-attachment: fixed; /* La imagen de fondo permanecerá fija cuando se haga scroll */
+    background-repeat: no-repeat; /* No repetir la imagen si es más pequeña que el área */
+}
+
+.extra {
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.detalles {
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+}
+    /* Reduce el tamaño de las tarjetas */
+.card {
+    width: 100%; /* Asegura que las tarjetas ocupen todo el espacio disponible */
+    max-width: 250px; /* Establece un ancho máximo para cada tarjeta */
+    margin-bottom: 20px; /* Reduce el espacio entre las tarjetas */
+    border-radius: 8px; /* Añade bordes redondeados a las tarjetas */
+}
+
+/* Ajusta el tamaño de las imágenes de los productos */
+.card-img-top {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 250px; /* Ajusta la altura al tamaño estándar que desees */
+    object-fit: contain; /* Mantiene la relación de aspecto y agrega espacio si es necesario */
+    /* background-color: #f0f0f0; Color de fondo para rellenar el espacio vacío */
+}
+
+.card-body h5 {
+    font-size: 1.5rem !important;
+}
+
+.card-body p {
+    font-size: 1.1rem !important;
+}
+
+/* Establece un alto máximo para los contenedores de las tarjetas si es necesario */
+.card-body h5, .card-body p {
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    line-height: 1.2;
+}
+
+.card-footer .btn-outline {
+    font-size: 0.8rem; /* Ajusta el tamaño de la fuente del botón */
+}
+
+.full-width {
+    width: 100vw;
+    margin-left: calc((98% - 100vw) / 2); /* Centra el header y asegura que ocupe todo el ancho 98 porque si no se mueve a los lados (?)*/
+}
+
+.clickable-card {
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.display-4 {
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}

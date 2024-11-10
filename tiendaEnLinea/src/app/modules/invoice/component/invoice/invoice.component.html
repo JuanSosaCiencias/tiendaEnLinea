@@ -1,0 +1,70 @@
+<div class="body-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h4>Facturas</h4>
+          </div>
+        </div>
+      
+      </div>
+      <div class="card-body">     
+        <!-- loading  -->
+        
+        @if(loading) {
+          <div class="text-center" >
+            <img src="assets/loading.gif" class="img-loading" alt="">
+          </div>
+        }
+        
+        @if(!loading && invoices.length == 0){
+          <div class="text-center table-empty">
+              <h4>No cuentas con facturas registradas</h4>
+          </div>
+        }@else {
+          <table class="table table-striped">
+            <thead>
+              <tr class="table-primary">
+                <th scope="col">No.</th>
+                <th scope="col">Factura</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Fecha de compra</th>
+                <th scope="col">Más</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for(invoice of invoices; track invoice.invoice_id; let i = $index ) {
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ invoice.invoice_id }}</td>
+                        <td>{{ invoice.total | currency: 'USD' }}</td>
+                        <td>{{ invoice.created_at | date: 'dd/MM/yyyy' }}</td>
+                        <td>
+                        <div class="dropdown">
+                          <!-- dots button  -->
+                          <button class="dropdown-button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="ph ph-dots-three-outline-vertical icon-menu"></i>
+                          </button>
+      
+                          <!-- menu options -->
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" (click)="showInvoice(invoice.invoice_id)">
+                                <i class="ph ph-eye icon-text-ul"></i>Ver detalles
+                              </a>
+                          </div>
+                        </div>
+                      </td>
+                  </tr>
+              }
+              
+            </tbody>
+          </table>
+        }
+           
+        
+      </div>
+      <div class="card-footer text-end">
+        <small>{{ current_date | date: 'dd/MMM/yyyy, h:mm a' }}</small>
+      </div>
+    </div>
+  </div>

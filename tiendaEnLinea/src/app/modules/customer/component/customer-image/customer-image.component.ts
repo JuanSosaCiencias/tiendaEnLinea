@@ -43,7 +43,7 @@ export class CustomerImageComponent {
         console.log(this.customer);
       },
       error: (e) => {
-        console.log(e);
+        console.error(e);
         this.loading = false;
       }
     });

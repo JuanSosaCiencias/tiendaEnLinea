@@ -1,0 +1,80 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <!-- Imagen del producto -->
+      <div class="col-md-4">
+        <div class="card" [id]="'card-' + product.product_id">
+          <div *ngIf="images.length > 1" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button *ngFor="let item of images; let i = index" type="button" class="indicator"
+                      data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i"
+                      [class.active]="i === 0" [attr.aria-current]="i === 0"
+                      [attr.aria-label]="'Slide ' + i"></button>
+            </div>
+            <div class="carousel-inner">
+              <div *ngFor="let prod of images; let i = index" class="carousel-item" [class.active]="i === 0">
+                <img [src]="prod.image !== '' ? prod.image : 'assets/no-product-image.png'"
+                     class="card-img-top"
+                     alt="..."
+                     >
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div *ngIf="images.length <= 1" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngIf="images.length == 0" class="carousel-item active">
+                <img src="assets/product-default.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div *ngFor="let prod of images" class="carousel-item active">
+                <img [src]="prod.image !== '' ? prod.image : 'assets/product-default.jpg'"
+                     class="d-block w-100"
+                     alt="..."
+                     >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detalles del producto -->
+      <div class="col-md-8">
+        <div class="card-body-product">
+          <div class="product-title">
+            {{ product.product }}
+          </div>
+          <div class="product-price">
+            {{ product.price | currencyFormat }}
+          </div>
+          <div class="product-description">
+            {{ product.description }}
+          </div>
+          
+          <!-- Dropdown para cantidad -->
+          <label for="quantitySelect" class="form-label">Cantidad:</label>
+          <select class="form-select" id="quantitySelect" [(ngModel)]="selectedQuantity" >
+            <option *ngFor="let qty of [1, 2, 3, 4, 5]" [value]="qty" [disabled]="qty > product.stock">
+              {{ qty }} {{ qty > product.stock ? '(Sin stock)' : '' }}
+            </option>
+          </select>
+
+          <!-- Botón agregar al carrito -->
+          <button type="button" class="btn btn-primary btn-add-to-cart" 
+                  (click)="addToCart(product, selectedQuantity)" 
+                  [disabled]="loading || selectedQuantity > product.stock"
+                  title="Agregar este producto al carrito" aria-label="Agregar al carrito">
+            <i class="ph" [ngClass]="loading ? 'ph-spinner' : 'ph-shopping-cart'" aria-hidden="true"></i>
+            {{ loading ? 'Cargando...' : 'Agregar al carrito' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

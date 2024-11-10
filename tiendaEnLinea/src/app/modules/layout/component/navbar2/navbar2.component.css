@@ -1,26 +1,27 @@
 /* navbar  */
 .navbar{
-    padding: 8px;
+    padding: 0px;
 }
 .navbar-content{
-    max-width: 1280px;
+    max-width: 3840px;
     margin: auto;
 }
 .nav-logo{
-    width: 60px;
+    width: auto;
     height: 60px;
-    margin-right: 20px;
-    margin-left: 8px;
+    margin-right: auto;
+    margin-left: 30%;
 }
 /* dropdown options  */
 .nav-dropdown-menu{
     background-color: #2c3e50;
-    border-radius: 0px;
-    margin-top: 13px;
+    /* border-radius: 0px; */
+    margin-top: auto;
     border: none;
 }
 .nav-dropdown-item{
     color: white !important;
+
 }
 .nav-dropdown-item:hover{
     background-color: white;

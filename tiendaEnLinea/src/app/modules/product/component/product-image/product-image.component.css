@@ -1,11 +1,11 @@
 .card-body-product{
-    padding: 16px;
+    padding: 30px;
 }
 
 .edit-product-image{
     position: relative;
     color: rgb(136, 136, 255);
-    top: -22px;
+    /* top: -22px; */
     cursor: pointer;
 }
 
@@ -32,5 +32,21 @@
 
 .basura{
     position: relative;
-    left : 90%;
+    left : 15%;
 }
+
+/* Aseguramos que la imagen ocupe todo el ancho de la ventana */
+.card-img-top {
+    width: 100vw;  /* 100% del ancho de la ventana */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;  /* Elimina cualquier espacio debajo de la imagen */
+}
+
+/* Usamos container-fluid para permitir que el contenedor ocupe todo el ancho */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+

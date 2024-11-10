@@ -6,6 +6,7 @@ import { AuthenticationService } from '../../../auth/_service/authentication.ser
 import { LoginComponent } from "../../../auth/component/login/login.component";
 import { RegisterComponent } from "../../../auth/component/register/register.component";
 import { SharedModule } from '../../../../shared/shared-module';
+import { Router } from '@angular/router';
 declare var $: any; // JQuery
 @Component({
   selector: 'app-navbar2',
@@ -25,7 +26,8 @@ export class Navbar2Component {
   swal: SwalMessages = new SwalMessages(); // swal messages
   constructor(
     private categoryService: CategoryService,
-    private servicioAutenticacion: AuthenticationService
+    private servicioAutenticacion: AuthenticationService,
+    private router: Router,
   ){}
   ngOnInit(){
     if(localStorage.getItem("token")){
@@ -57,6 +59,11 @@ export class Navbar2Component {
     this.loggedIn = false;
     window.location.reload();
   }
+
+  showCategoryProducts(category_id: number){
+    this.router.navigate(['category/' + category_id]);
+  }
+
   showLoginModal(){
     $("#loginModal").modal("show");
   }

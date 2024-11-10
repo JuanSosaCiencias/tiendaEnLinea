@@ -3,7 +3,7 @@
     <div class="container-fluid navbar-content">
     <!-- logo  -->
       <a class="navbar-brand" href="/">
-        <img src="assets/logo.png" alt="..." class="nav-logo">
+        <img src="assets/logo4.png" alt="..." class="nav-logo">
       </a>
     <!-- responsive button  -->
       
@@ -20,7 +20,7 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías</a>
             <div class="dropdown-menu nav-dropdown-menu">
               @for(category of categories; track category.category_id) {
-                <a class="dropdown-item nav-dropdown-item" routerLink="#">{{ category.category }}</a>
+                <a class="dropdown-item nav-dropdown-item" (click)="showCategoryProducts(category.category_id)">{{ category.category }}</a>
               }
             </div>
           </li>
@@ -33,7 +33,7 @@
                 <a class="dropdown-item nav-dropdown-item" routerLink="/customer">Clientes</a>
                 <a class="dropdown-item nav-dropdown-item" routerLink="/invoice">Facturas</a>
                 <a class="dropdown-item nav-dropdown-item" routerLink="/product">Productos</a>
-                <a class="dropdown-item nav-dropdown-item" routerLink="/region">Regiones</a>
+                <!-- <a class="dropdown-item nav-dropdown-item" routerLink="/region">Regiones</a> -->
               </div>
             </li>
           }

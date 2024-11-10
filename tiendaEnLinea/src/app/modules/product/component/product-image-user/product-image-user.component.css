@@ -1,0 +1,99 @@
+.card-body-product {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.card{
+    background-color: #fff;
+    
+}
+
+.product-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.product-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #313131;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #76a5d3;
+    margin-bottom: 20px;
+}
+
+
+/* Usamos container-fluid para permitir que el contenedor ocupe todo el ancho */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Ajusta el tamaño de las imágenes de los productos */
+.card-img-top {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    object-fit: contain;
+    /* background-color: #881919; */
+    border-radius: 8px; /* Bordes redondeados */
+    
+}
+
+
+
+.form-select {
+    width: 15%; /* Ajusta el tamaño del dropdown */
+    display: inline-block;
+    margin-left: 1rem;
+}
+  
+.btn-add-to-cart {
+    padding: 10px 15px;
+    margin-left: 2vh;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    
+}
+  
+.btn-add-to-cart:hover {
+    background-color: #0056b3; /* Cambia al color que prefieras */
+    transform: scale(1.05); /* Pequeño aumento al pasar el mouse */
+}
+
+.btn-add-to-cart:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+.table th {
+    font-weight: 1000;
+}
+
+.table td {
+    color: #3b3b3b;
+    padding: 8px 12px;
+}
+
+.dropdown {
+    margin-top: 15px;
+}
+
+.form-label{
+    font-size: 20px;
+    font-weight: bold;
+    color: #313131;
+}
+
